@@ -79,27 +79,27 @@ function App() {
         <nav className="app-navigation">
           <ul>
             <li>
-              <NavLink 
-                to="/" 
-                className={({ isActive }) => isActive ? "active" : ""}
+              <NavLink
+                to="/"
+                className={({ isActive }) => (isActive ? "active" : "")}
                 data-testid="nav-home"
               >
                 Home
               </NavLink>
             </li>
             <li>
-              <NavLink 
-                to="/todos" 
-                className={({ isActive }) => isActive ? "active" : ""}
+              <NavLink
+                to="/todos"
+                className={({ isActive }) => (isActive ? "active" : "")}
                 data-testid="nav-todos"
               >
                 Todos
               </NavLink>
             </li>
             <li>
-              <NavLink 
-                to="/about" 
-                className={({ isActive }) => isActive ? "active" : ""}
+              <NavLink
+                to="/about"
+                className={({ isActive }) => (isActive ? "active" : "")}
                 data-testid="nav-about"
               >
                 About
@@ -111,14 +111,11 @@ function App() {
 
       <main>
         <Routes>
-          <Route 
-            path="/" 
-            element={<HomePage todos={todos} />} 
-          />
-          <Route 
-            path="/todos" 
+          <Route path="/" element={<HomePage todos={todos} />} />
+          <Route
+            path="/todos"
             element={
-              <TodosPage 
+              <TodosPage
                 todos={todos}
                 isLoading={isLoading}
                 error={error}
@@ -126,7 +123,7 @@ function App() {
                 toggleTodo={toggleTodo}
                 deleteTodo={deleteTodo}
               />
-            } 
+            }
           />
           <Route path="/about" element={<AboutPage />} />
           <Route path="*" element={<NotFoundPage />} />
@@ -134,7 +131,13 @@ function App() {
       </main>
 
       <footer>
-        <p>Created for Playwright MERN Demo • Current path: {location.pathname}</p>
+        <p>
+          Playwright MERN Demo •{" "}
+          <a href="https://github.com/somahargitai/playwright-mern-demo">
+            GitHub
+          </a>{" "}
+          • Current path: {location.pathname}
+        </p>
       </footer>
     </div>
   );
