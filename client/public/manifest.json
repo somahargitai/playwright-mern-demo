@@ -1,0 +1,26 @@
+{
+  "name": "Todo App - Playwright Demo",
+  "short_name": "TodoApp",
+  "description": "A demonstration todo application for testing with Playwright",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#4A6EB5",
+  "theme_color": "#4A6EB5",
+  "icons": [
+    {
+      "src": "/icons/favicon-16x16.svg",
+      "sizes": "16x16",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/icons/favicon-32x32.svg",
+      "sizes": "32x32",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/icons/logo.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+} 

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo API Server</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .endpoint {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-left: 4px solid #3498db;
+        }
+        code {
+            background-color: #f1f1f1;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        .method {
+            font-weight: bold;
+            color: #fff;
+            padding: 3px 6px;
+            border-radius: 3px;
+            margin-right: 8px;
+        }
+        .get { background-color: #28a745; }
+        .post { background-color: #007bff; }
+        .put { background-color: #fd7e14; }
+        .delete { background-color: #dc3545; }
+    </style>
+</head>
+<body>
+    <h1>Todo API Server</h1>
+    <p>Welcome to the Todo API server. This server provides endpoints to manage your todo items.</p>
+    
+    <h2>Available Endpoints:</h2>
+    
+    <div class="endpoint">
+        <p><span class="method get">GET</span> <code>/api/todos</code></p>
+        <p>Retrieves all todo items.</p>
+    </div>
+    
+    <div class="endpoint">
+        <p><span class="method get">GET</span> <code>/api/todos/:id</code></p>
+        <p>Retrieves a specific todo item by ID.</p>
+    </div>
+    
+    <div class="endpoint">
+        <p><span class="method post">POST</span> <code>/api/todos</code></p>
+        <p>Creates a new todo item. The request body should include a <code>text</code> property.</p>
+    </div>
+    
+    <div class="endpoint">
+        <p><span class="method put">PUT</span> <code>/api/todos/:id</code></p>
+        <p>Updates a specific todo item. The request body can include <code>text</code> and/or <code>completed</code> properties.</p>
+    </div>
+    
+    <div class="endpoint">
+        <p><span class="method delete">DELETE</span> <code>/api/todos/:id</code></p>
+        <p>Deletes a specific todo item.</p>
+    </div>
+    
+    <h2>Usage Example</h2>
+    <p>To create a new todo:</p>
+    <pre><code>
+fetch('/api/todos', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        text: 'Learn Playwright testing'
+    })
+})
+.then(response => response.json())
+.then(data => console.log(data));
+    </code></pre>
+    
+    <p>The Todo App frontend is available at: <a href="http://localhost:5173">http://localhost:5173</a></p>
+</body>
+</html> 
